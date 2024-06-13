@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/style.forms.css" />
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/forms.js"></script>
+
+    <title>Healthcare.</title>
+  </head>
+  <body>
+    <nav
+    class="navbar navbar-expand-lg navbar-light bg-light fixed-top align-items-center"
+  >
+    <div class="container">
+      <h1 class="theme">Healthcare<span>.</span></h1>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end items"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Voltar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+      <div class="container main">
+        <div class="row formulario">
+            <div class="col-md-6 side-image">
+                
+            </div>
+            <div class="col-md-6 right">
+                <div class="input-box">
+                    <header>Olá! Vamos fazer uma simulação de preços de plano de saúde?</header>
+                      <div class="input-field">
+                        <input type="text" class="input" id="name" >
+                        <label for="name">Seu Nome</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" class="input" id="age" >
+                        <label for="age">Sua Idade</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" class="input" id="weight" >
+                        <label for="weight">Sua Peso</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" class="input" step="0.1" id="height">
+                        <label for="height">Seu Altura</label>
+                    </div>
+                    <div class="input-field">
+                        <button class="submit" onclick="simular()"> Calcular</button>
+                        <a class="a-result" id="show-me" href="#showme" >Clique para ver o resultado</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+  </div>
+    <div class="second-part" id="showme">
+      <div class="container second" id="result" style="display: none;">
+        <h1 class="col introducao-client" id="nameClient"></h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col basico">
+            <div class="card-title h-100" >
+                <h3 class="tema-text">Plano Básico</h3>
+              <div class="card-body">
+                <div class=" d-flex  justify-content-center cards-items">
+                  <h5 class="operadores">Operador A: </h5>
+                  <p class="card-text" id="basicoA"></p>
+                </div>
+              <div class="card-body">
+                <div class=" d-flex  justify-content-center cards-items">
+                  <h5 class="operadores">Operador B: </h5>
+                  <p class="card-text" id="basicoB"></p>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class=" d-block vantagem cards-items">
+                  <h5 class="operadores">Mais Vantajoso:</h5>
+                  <p class="card-text" id="basictext"></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col standard">
+            <div class="card-title h-100" >
+                <h3 class="tema-text">Plano Standard</h3>
+              <div class="card-body">
+                <div class=" d-flex  justify-content-center cards-items">
+                  <h5 class="operadores">Operador A: </h5>
+                  <p class="card-text" id="standardA"></p>
+                </div>
+              <div class="card-body">
+                <div class=" d-flex  justify-content-center cards-items">
+                  <h5 class="operadores">Operador B: </h5>
+                  <p class="card-text" id="standardB"></p>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class=" d-block vantagem cards-items">
+                  <h5 class="operadores">Mais Vantajoso:</h5>
+                  <p class="card-text" id="standardtext"></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col premium">
+            <div class="card-title h-100" >
+                <h3 class="tema-text">Plano Premium</h3>
+              <div class="card-body">
+                <div class=" d-flex  justify-content-center cards-items">
+                  <h5 class="operadores">Operador A: </h5>
+                  <p class="card-text" id="premiumA"></p>
+                </div>
+              <div class="card-body">
+                <div class=" d-flex  justify-content-center cards-items">
+                  <h5 class="operadores">Operador B: </h5>
+                  <p class="card-text" id="premiumB"></p>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class=" d-block vantagem cards-items">
+                  <h5 class="operadores">Mais Vantajoso:</h5>
+                  <p class="card-text" id="premiumtext"></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          </div>
+            <div class="col-12 mais-vantajoso">
+              <div class="card-title h-100" >
+                  <h3 class="tema-text">Plano mais Vantajoso para você</h3>
+                <div class="card-body">
+                  <div class="d-block vantagem cards-items">
+                    <h5 class="operadores" id="operador_m_vant"></h5>
+                    <p class="card-text" id="valueoperator"></p>
+
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
