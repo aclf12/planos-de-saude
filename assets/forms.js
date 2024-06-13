@@ -20,7 +20,7 @@ function simular(){
     }else if (!idade || isNaN(idade) || idade > 120){
         alert('Idade dever ser um numero entre 1 e 120');
         exit();
-    }else if (!peso || isNaN(peso) || peso <= 0){
+    }else if (!peso || isNaN(peso) || peso <= 0 || peso > 200){
         alert('Peso tem que ser positivo');
         exit();
     }else if(!altura || isNaN(altura) || altura <=0){
